@@ -1,11 +1,15 @@
-<script setup lang="ts"> 
+<script setup lang="ts">
+import { RouterView } from "vue-router";
 
+import MainLayout from "./layout/MainLayout.vue";
 </script>
 
 <template>
-  <h1>Agro Info app </h1>
+  <MainLayout>
+    <template v-slot:mainSlot1>
+      <RouterView></RouterView>
+    </template>
+  </MainLayout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
