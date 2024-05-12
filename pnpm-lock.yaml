@@ -26,6 +26,9 @@ importers:
       vue-router:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.25(typescript@5.4.5))
+      vue3-toastify:
+        specifier: ^0.2.1
+        version: 0.2.1(vue@3.4.25(typescript@5.4.5))
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
@@ -953,6 +956,15 @@ packages:
     peerDependencies:
       typescript: '*'
 
+  vue3-toastify@0.2.1:
+    resolution: {integrity: sha512-u4i5LCu1q5qs4L4Kbjb4u8NipCS8ox1fCHQ6XFS62676xnA6Q/AJRpZEkAurTMp723LeH6eQX6k9+24bKf1T4Q==}
+    engines: {node: '>=16', npm: '>=7'}
+    peerDependencies:
+      vue: '>=3.2.0'
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
   vue@3.4.25:
     resolution: {integrity: sha512-HWyDqoBHMgav/OKiYA2ZQg+kjfMgLt/T0vg4cbIF7JbXAjDexRf5JRg+PWAfrAkSmTd2I8aPSXtooBFWHB98cg==}
     peerDependencies:
@@ -1775,6 +1787,10 @@ snapshots:
       '@vue/language-core': 2.0.14(typescript@5.4.5)
       semver: 7.6.0
       typescript: 5.4.5
+
+  vue3-toastify@0.2.1(vue@3.4.25(typescript@5.4.5)):
+    optionalDependencies:
+      vue: 3.4.25(typescript@5.4.5)
 
   vue@3.4.25(typescript@5.4.5):
     dependencies:

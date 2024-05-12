@@ -21,7 +21,7 @@ const datos = [
 </script>
 
 <template>
-  <div>
+  <div class="my-3 rounded-lg shadow">
     <Swiper
       :modules="modulos"
       :navigation="true"
@@ -33,7 +33,7 @@ const datos = [
         <img
           :src="dato.img"
           alt="Photo description"
-          class="absolute top-0 bottom-0 right-0 left-0 w-full h-full object-cover -z-10"
+          class="absolute top-0 bottom-0 right-0 left-0 w-full h-full object-cover -z-10 rounded-lg"
         />
         <p class="text-white">{{ dato.txt }}</p>
       </SwiperSlide>
@@ -42,15 +42,25 @@ const datos = [
 </template>
 
 <style scoped>
-
-/* swiper pagina de inicio START */
 .swiper {
-  @apply bg-yellow-600 w-full overflow-hidden;
-  height: 226px;
+  /* @apply bg-yellow-600 w-full overflow-hidden; */
+  overflow: hidden;
+  width: 100%;
+  height: 340px;
 }
 
 .swiper-slide {
-  @apply flex items-center justify-center flex-col p-10 shadow-md;
+  /* @apply flex items-center justify-center flex-col p-10 shadow-md; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.5rem;
 }
-/* swiper pagina de inicio END */
+
+@media (max-width: 768px) {
+  .swiper {
+    height: 226px;
+  }
+}
 </style>

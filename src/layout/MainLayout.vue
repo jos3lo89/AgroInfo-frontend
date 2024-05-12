@@ -5,7 +5,7 @@ import FoooterC from "../components/FooterC.vue";
 
 <template>
   <HeaderC></HeaderC>
-  <main>
+  <main class="md:mx-10">
     <slot name="mainSlot1"> </slot>
   </main>
   <FoooterC></FoooterC>

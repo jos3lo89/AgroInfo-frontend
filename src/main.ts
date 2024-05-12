@@ -1,10 +1,28 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import router from './routes/routes.ts'
+import { createApp } from "vue";
+import "./style.css";
+import "vue3-toastify/dist/index.css";
+import App from "./App.vue";
+import router from "./routes/routes.ts";
+import { createPinia } from "pinia";
+import piniaPersisted from "pinia-plugin-persistedstate";
 
 
-const app = createApp(App)
+const app = createApp(App);
+const pinia = createPinia();
 
-app.use(router)
-app.mount("#app")
+pinia.use(piniaPersisted);
+
+app.use(pinia);
+app.use(router);
+app.mount("#app");
+
+// guardia de rutas
+import { useAuthStore } from "./context/auth.store.ts";
+const authStore = useAuthStore();
+router.beforeEach((to) => {
+  const isAuth = to.meta.auth;
+
+  if (isAuth && !authStore.token) {
+    return { name: "login" };
+  }
+});
