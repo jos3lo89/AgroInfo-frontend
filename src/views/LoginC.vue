@@ -4,6 +4,7 @@ import { loginF } from "../service/auth.service";
 import { toast } from "vue3-toastify";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "../context/auth.store";
+import { RouterLink } from "vue-router";
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -32,6 +33,9 @@ const sendData = async () => {
 </script>
 
 <template>
+  <div class="text-center my-6">
+    <h3 class="text-2xl font-semibold">Inicio de Sesión</h3>
+  </div>
   <form
     class="max-w-sm mx-auto shadow p-4 rounded-lg"
     @submit.prevent="sendData"
@@ -68,9 +72,15 @@ const sendData = async () => {
       type="submit"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
     >
-      Submit
+      Ingresar
     </button>
   </form>
+  <div class="text-center my-6">
+    <p class="inline">¿No tienes una cuenta?</p>
+    <RouterLink class="text-blue-600" :to="{ name: 'registrar' }">
+      Registrate aqui.</RouterLink
+    >
+  </div>
 </template>
 
 <style scoped></style>

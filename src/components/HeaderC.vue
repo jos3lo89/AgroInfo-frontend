@@ -23,10 +23,15 @@ const directLogin = () => {
   openMenu.value = !openMenu.value;
   router.push({ name: "login" });
 };
+
+const directAccount = () => {
+  openMenu.value = !openMenu.value;
+  router.push({ name: "perfil" });
+};
 </script>
 
 <template>
-  <header class="bg-slate-100 flex justify-around py-2 items-center">
+  <header class="bg-slate-100 flex justify-around py-2 mt-3 items-center">
     <h1
       class="text-2xl font-mono font-semibold cursor-pointer"
       @click="router.push({ name: 'inicio' })"
@@ -41,10 +46,10 @@ const directLogin = () => {
       <div
         v-if="!authStore.token"
         @click="openMenu = !openMenu"
-        class="relative w-14 h-14 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600 cursor-pointer"
+        class="w-14 h-14 overflow-hidden bg-gray-100 rounded-full cursor-pointer p-1 ring-2 ring-gray-300"
       >
         <svg
-          class="absolute w-14 h-14 text-gray-400 left-0"
+          class=""
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,15 +64,17 @@ const directLogin = () => {
       <img
         v-else
         @click="openMenu = !openMenu"
-        class="cursor-pointer w-14 h-14 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+        class="cursor-pointer w-14 h-14 p-1 rounded-full ring-2 ring-gray-300"
         :src="authStore.datosUsuario.foto"
         alt=""
       />
+
       <div
         v-if="openMenu"
-        class="bg-white p-3 rounded-lg absolute top-20 space-y-2 z-10 shadow-lg"
+        class="bg-white absolute top-16 right-0 grid grid-cols-1 p-3 space-y-3 rounded-lg z-10 shadow-lg w-32"
       >
         <button
+          @click="directAccount"
           v-if="authStore.token"
           class="bg-gray-800 px-2 py-1 rounded-lg outline-none border-none text-sm capitalize text-white"
         >
@@ -83,9 +90,9 @@ const directLogin = () => {
         <button
           v-else
           @click="directLogin"
-          class="bg-blue-600 px-2 py-1 rounded-lg outline-none border-none text-sm capitalize text-white min-w-32"
+          class="bg-blue-600 px-2 py-1 rounded-lg outline-none border-none text-sm capitalize text-white"
         >
-          inciar sesion
+          iniciar sesion
         </button>
       </div>
     </div>

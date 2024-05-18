@@ -20,7 +20,7 @@ import SliderC from "../components/SliderC.vue";
     <button
       class="bg-indigo-600 px-2 py-1 rounded-lg outline-none capitalize text-white hover:bg-indigo-500 max-w-52"
     >
-      asociación de productosres de cocaina
+      asociación de productosres de maiz
     </button>
   </div>
   <div class="px-6 py-10 text-center bg-white rounded-lg my-3 shadow">
