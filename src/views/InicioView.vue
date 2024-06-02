@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SliderC from "../components/SliderC.vue";
+import router from "../routes/routes";
 </script>
 
 <template>
@@ -8,16 +9,19 @@ import SliderC from "../components/SliderC.vue";
     class="bg-green-100 flex justify-around items-center flex-col py-6 md:flex-row gap-3 shadow rounded-lg"
   >
     <button
+    @click="router.push({ name: 'asociaciones', params: { id: 'papa' } })"
       class="bg-green-600 px-2 py-1 rounded-lg outline-none capitalize text-white hover:bg-green-500 max-w-52"
     >
       asociación de productosres de papa
     </button>
     <button
+    @click="router.push({ name: 'asociaciones', params: { id: 'quinua' } })"
       class="bg-yellow-600 px-2 py-1 rounded-lg outline-none capitalize text-white hover:bg-yellow-500 max-w-52"
     >
       asociación de productosres de quinua
     </button>
     <button
+    @click="router.push({ name: 'asociaciones', params: { id: 'maiz' } })"
       class="bg-indigo-600 px-2 py-1 rounded-lg outline-none capitalize text-white hover:bg-indigo-500 max-w-52"
     >
       asociación de productosres de maiz
